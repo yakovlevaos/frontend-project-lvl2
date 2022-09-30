@@ -50,7 +50,7 @@ const getDiff = (diffInfo) => {
       case 'unchanged':
         return `    ${diff.key}: ${diff.value}`;
       case 'changed':
-        return (`  - ${diff.key}: ${diff.value1} \n  + ${diff.key}: ${diff.value2}`);
+        return (`  - ${diff.key}: ${diff.value1}\n  + ${diff.key}: ${diff.value2}`);
       case 'added':
         return `  + ${diff.key}: ${diff.value}`;
       default:
