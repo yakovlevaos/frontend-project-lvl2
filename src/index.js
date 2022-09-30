@@ -59,7 +59,6 @@ const getDiff = (diffInfo) => {
   });
   return `{\n${result.join('\n')}\n}`;
 };
-// eslint-disable-next-line no-undef
 const getAbsolutPath = (filePath) => path.resolve(process.cwd(), '__fixtures__', filePath);
 
 const readFile = (filePath) => fs.readFileSync(getAbsolutPath(filePath), 'utf-8');
