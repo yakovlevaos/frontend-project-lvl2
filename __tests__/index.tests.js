@@ -1,17 +1,25 @@
 import fs from 'fs';
-import path from 'path';
 import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
 import genDiff from '../src/index.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf8');
+const tests = [
+  ['file1.json', 'file2.json', 'expected_file.txt'],
+  ['file1.yml', 'file2.yml', 'expected_file.txt'],
+];
 
-test('check genDiff', () => {
-  const plainData = readFile('expected_file.txt');
-  const expected = plainData.trim();
-  const actual = genDiff(getFixturePath('file1.json'), getFixturePath('file2.json'));
-  expect(actual).toEqual(expected);
+describe('check for correct diff', () => {
+  test.each(tests)('Compare files', (firstArg, secondArg, expectedResult) => {
+    const firstFile = getFixturePath(firstArg);
+    const secondFile = getFixturePath(secondArg);
+    const getResult = readFile(expectedResult);
+    const result = genDiff(firstFile, secondFile);
+    expect(result).toEqual(getResult);
+  });
 });
