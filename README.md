@@ -5,3 +5,4 @@
 ![workflow build](https://github.com/yakovlevaos/frontend-project-lvl2/actions/workflows/tests.yml/badge.svg?event=push)
 [![asciicast](https://asciinema.org/a/CeCGO1BFl83RSnigWnOqnISWY.svg)](https://asciinema.org/a/CeCGO1BFl83RSnigWnOqnISWY)
 [![asciicast](https://asciinema.org/a/yp9BVg9jalsN5lIzkwZR2KsAT.svg)](https://asciinema.org/a/yp9BVg9jalsN5lIzkwZR2KsAT)
+[![asciicast](https://asciinema.org/a/41FzrYG22yb5nvVNOsnBa2e1u.svg)](https://asciinema.org/a/41FzrYG22yb5nvVNOsnBa2e1u)
